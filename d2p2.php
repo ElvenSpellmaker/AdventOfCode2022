@@ -3,26 +3,24 @@
 $input = explode("\n", rtrim(file_get_contents('d2.txt')));
 
 $gameScore = [
-	'AX' => 3 + 0,
-	'AY' => 1 + 3,
-	'AZ' => 2 + 6,
+	'A X' => 3 + 0,
+	'A Y' => 1 + 3,
+	'A Z' => 2 + 6,
 
-	'BX' => 1 + 0,
-	'BY' => 2 + 3,
-	'BZ' => 3 + 6,
+	'B X' => 1 + 0,
+	'B Y' => 2 + 3,
+	'B Z' => 3 + 6,
 
-	'CX' => 2 + 0,
-	'CY' => 3 + 3,
-	'CZ' => 1 + 6,
+	'C X' => 2 + 0,
+	'C Y' => 3 + 3,
+	'C Z' => 1 + 6,
 ];
 
 $score = 0;
 
 foreach ($input as $game)
 {
-	[$chose, $choose] = explode(' ', $game);
-
-	$score += $gameScore[$chose . $choose];
+	$score += $gameScore[$game];
 }
 
 
